@@ -1,16 +1,24 @@
 .footer{
   width: 100%;
   width: 1024px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 12px;
 }
-
+  .footerContent{
+    display: flex;
+    gap: 20px;
+  }
 .fLists{
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
 }
-
+.fText{
+  color: #067164;
+  text-decoration: none;
+}
 .fList{
   list-style: none;
   padding: 0;
@@ -18,6 +26,6 @@
 
 .fListItem{
   margin-bottom: 10px;
-  color: #003580;
+  color: #067164;
   cursor: pointer;
 }

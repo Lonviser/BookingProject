@@ -70,12 +70,12 @@
 
 .listSearch>button{
   padding: 10px;
-  background-color: #0071c2;
-  color: white;
+  background-color: #067164;
   border: none;
   width: 100%;
   font-weight: 500;
   cursor: pointer;
+  color:white;
 }
 
 .listResult {

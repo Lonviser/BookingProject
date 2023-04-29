@@ -14,9 +14,9 @@ const Home = () => {
       <Header/>
       <div className="homeContainer">
         <Featured/>
-        <h1 className="homeTitle">Browse by property type</h1>
+        <h2 className="homeTitle">Варианты на любой вкус:</h2>
         <PropertyList/>
-        <h1 className="homeTitle">Homes guests love</h1>
+        <h2 className="homeTitle">Дома, которые любят гости:</h2>
         <FeaturedProperties/>
         <MailList/>
         <Footer/>

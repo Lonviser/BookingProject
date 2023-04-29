@@ -9,29 +9,26 @@ const SearchItem = () => {
         className="siImg"
       />
       <div className="siDesc">
-        <h1 className="siTitle">Tower Street Apartments</h1>
-        <span className="siDistance">500m from center</span>
-        <span className="siTaxiOp">Free airport taxi</span>
+        <h1 className="siTitle">Пинский дворик</h1>
+        <span className="siDistance">500m от центра</span>
         <span className="siSubtitle">
-          Studio Apartment with Air conditioning
+          Оптимальный выбор для туризма и деловых поездок. 
         </span>
         <span className="siFeatures">
-          Entire studio • 1 bathroom • 21m² 1 full bed
-        </span>
-        <span className="siCancelOp">Free cancellation </span>
+          Студия целиком • 1 ванная комната • 21 м² 1 двуспальная кровать        </span>
+        <span className="siCancelOp">Бесплатное аннулирование </span>
         <span className="siCancelOpSubtitle">
-          You can cancel later, so lock in this great price today!
+          Вы можете отменить позже, так что зафиксируйте эту отличную цену сегодня!
         </span>
       </div>
       <div className="siDetails">
         <div className="siRating">
-          <span>Excellent</span>
-          <button>8.9</button>
+          <span>Отлично</span>
+          <button>9.4</button>
         </div>
         <div className="siDetailTexts">
-          <span className="siPrice">$112</span>
-          <span className="siTaxOp">Includes taxes and fees</span>
-          <button className="siCheckButton">See availability</button>
+          <span className="siPrice">от 90 рублей</span>
+          <button className="siCheckButton">Посмотреть наличие</button>
         </div>
       </div>
     </div>
