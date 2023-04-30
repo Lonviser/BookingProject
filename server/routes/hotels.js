@@ -13,7 +13,7 @@ router.post("/", async (req,res)=>{
         const savedHotel = await newHotel.save();
         res.status(200).json(savedHotel);
     }catch(err){
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
 });
 
@@ -27,7 +27,7 @@ router.put("/:id", async (req,res)=>{
             {new: true});
         res.status(200).json(updatedHotel);
     }catch(err){
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
 });
 
@@ -35,7 +35,7 @@ router.put("/:id", async (req,res)=>{
 
 router.delete("/:id", async (req,res)=>{
     try{
-      await Hotel.findByIdAndUpdate(
+      await Hotel.findByIdAndDelete(
             req.params.id,
       );
         res.status(200).json("Hotel has been deleted");
@@ -61,11 +61,6 @@ router.get("/:id", async (req,res)=>{
 
 router.get("/", async (req,res)=>{
 
-    const failed = true;
-    const err = new Error();
-    err.statu = 404;
-    err.message ="Sorry not found";
-    if(failed) return next(err);
 
     try{
         const hotel = await Hotel.find();
@@ -73,6 +68,6 @@ router.get("/", async (req,res)=>{
     }catch(err){
         res.status(500).json(err);
     }
-})
+});
 
 export default router;
