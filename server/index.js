@@ -23,11 +23,7 @@ mongoose.connection.on("connected",()=>{
     console.log("mongoDB connected");
 })
 
-app.get("/",(req,res)=>{
-    res.send("hello first request");
-});
 
-//middlewares
 //middlewares
 
 app.use(express.json());

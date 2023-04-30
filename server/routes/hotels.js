@@ -40,7 +40,7 @@ router.delete("/:id", async (req,res)=>{
       );
         res.status(200).json("Hotel has been deleted");
     }catch(err){
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
 });
 
@@ -53,18 +53,25 @@ router.get("/:id", async (req,res)=>{
         );
         res.status(200).json(hotel);
     }catch(err){
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
 });
 
 //GET ALL
 
 router.get("/", async (req,res)=>{
+
+    const failed = true;
+    const err = new Error();
+    err.statu = 404;
+    err.message ="Sorry not found";
+    if(failed) return next(err);
+
     try{
         const hotel = await Hotel.find();
         res.status(200).json(hotel);
     }catch(err){
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
 })
 
