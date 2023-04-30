@@ -10,8 +10,8 @@ const Featured = () => {
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Брест</h1>
-          <h2>25 вариантов</h2>
+          <h2>Брест</h2>
+          <h3>25 вариантов</h3>
         </div>
       </div>
       
@@ -22,8 +22,8 @@ const Featured = () => {
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Гродно</h1>
-          <h2>20 вариантов</h2>
+          <h2>Гродно</h2>
+          <h3>20 вариантов</h3>
         </div>
       </div>
       <div className="featuredItem">
@@ -33,8 +33,8 @@ const Featured = () => {
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Пинск</h1>
-          <h2>5 вариантов</h2>
+          <h2>Пинск</h2>
+          <h3>5 вариантов</h3>
         </div>
       </div>
     </div>
