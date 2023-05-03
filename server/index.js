@@ -5,6 +5,7 @@ import authRoute from "./routes/auth.js" ;
 import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
+import cookieParser from "cookie-parser";
 const app = express();
 dotenv.config();
 
@@ -26,6 +27,8 @@ mongoose.connection.on("connected",()=>{
 
 //middlewares
 
+app.use(cookieParser());
+
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
@@ -45,7 +48,7 @@ app.use((err, req, res, next) => {
 });
 
 
-app.listen(8805, () => {
+app.listen(8806, () => {
     connect();
   console.log("Сonnected to backend");
 });
