@@ -1,6 +1,7 @@
 import "./searchItem.css";
+import { Link } from "react-router-dom";
 
-const SearchItem = () => {
+const SearchItem = ({ item })  => {
   return (
     <div className="searchItem">
       <img
@@ -9,26 +10,29 @@ const SearchItem = () => {
         className="siImg"
       />
       <div className="siDesc">
-        <h1 className="siTitle">Пинский дворик</h1>
-        <span className="siDistance">500m от центра</span>
+        <h1 className="siTitle">{item.name}</h1>
+        <span className="siDistance">{item.distance}м от центра</span>
         <span className="siSubtitle">
           Оптимальный выбор для туризма и деловых поездок. 
         </span>
         <span className="siFeatures">
-          Студия целиком • 1 ванная комната • 21 м² 1 двуспальная кровать        </span>
+         {item.desc}         
+          </span>
         <span className="siCancelOp">Бесплатное аннулирование </span>
         <span className="siCancelOpSubtitle">
           Вы можете отменить позже, так что зафиксируйте эту отличную цену сегодня!
         </span>
       </div>
       <div className="siDetails">
-        <div className="siRating">
-          <span>Отлично</span>
-          <button>9.4</button>
-        </div>
+        {item.rating && <div className="siRating">
+          <span>Excellent</span>
+          <button>{item.rating}</button>
+        </div>}
         <div className="siDetailTexts">
-          <span className="siPrice">от 90 рублей</span>
-          <button className="siCheckButton">Посмотреть наличие</button>
+          <span className="siPrice">от {item.cheapestPrice} рублей</span>
+          <Link to={`/hotels/${item._id}`}>
+            <button className="siCheckButton">Посмотреть наличие</button>
+          </Link>
         </div>
       </div>
     </div>

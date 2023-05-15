@@ -79,9 +79,9 @@ const Header = ({ type }) => {
                 <span
                   onClick={() => setOpenDate(!openDate)}
                   className="headerSearchText"
-                >{`${format(date[0].startDate, "dd/MM/yyyy")} до ${format(
+                >{`${format(date[0].startDate, "MM/dd/yyyy")} до ${format(
                   date[0].endDate,
-                  "dd/MM/yyyy"
+                  "MM/dd/yyyy"
                 )}`}</span>
                 {openDate && (
                   <DateRange
