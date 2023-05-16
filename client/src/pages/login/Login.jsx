@@ -49,7 +49,7 @@ const Login = () => {
           className="lInput"
         />
         <button disabled={loading} onClick={handleClick} className="lButton">
-          Войти
+          Login
         </button>
         {error && <span>{error.message}</span>}
       </div>
