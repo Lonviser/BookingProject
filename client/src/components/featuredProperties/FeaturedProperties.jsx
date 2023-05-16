@@ -22,7 +22,6 @@ const FeaturedProperties = () => {
               <span className="fpPrice">Цена от {item.cheapestPrice} рублей</span>
               {item.rating && <div className="fpRating">
                 <button>{item.rating}</button>
-                <span>Excellent</span>
               </div>}
             </div>
           ))}

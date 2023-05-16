@@ -71,7 +71,7 @@ const Header = ({ type }) => {
             <p className="headerDesc">
             Получайте вознаграждение за свои путешествия — разблокируйте мгновенную экономию в размере 10%
             </p>
-            <button className="headerBtn">Войти / зарегистрироваться</button>
+            {!user && <button className="headerBtn">Войти / зарегистрироваться</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />

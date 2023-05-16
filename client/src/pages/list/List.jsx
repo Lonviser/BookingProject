@@ -36,7 +36,7 @@ const List = () => {
             <h1 className="lsTitle">Поиск</h1>
             <div className="lsItem">
               <label>Место назначения:</label>
-              <input placeholder={destination} type="text" />
+              <input value={destination} type="text" />
             </div>
             <div className="lsItem">
               <label>Дата заезда:</label>

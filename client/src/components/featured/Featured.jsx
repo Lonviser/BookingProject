@@ -3,9 +3,23 @@ import "./featured.css";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
-    "/hotels/countByCity?cities=minsk,madrid,london"
+    "/hotels/countByCity?cities=Брест,Гродно,Пинск"
   );
-
+  function getNoun(number, one, two, five) {
+    let n = Math.abs(number);
+    n %= 100;
+    if (n >= 5 && n <= 20) {
+      return five;
+    }
+    n %= 10;
+    if (n === 1) {
+      return one;
+    }
+    if (n >= 2 && n <= 4) {
+      return two;
+    }
+    return five;
+  }
   return (
     <div className="featured">
       {loading ? (
@@ -19,8 +33,8 @@ const Featured = () => {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h2>Минск</h2>
-              <h3>{data[0]} вариантов</h3>
+              <h2>Брест</h2>
+              <h3>{data[0]} {getNoun(data[0],'вариант', 'варианта', 'вариантов')}</h3>
             </div>
           </div>
 
@@ -32,7 +46,7 @@ const Featured = () => {
             />
             <div className="featuredTitles">
               <h2>Гродно</h2>
-              <h3>{data[1]} вариантов</h3>
+              <h3>{data[1]} {getNoun(data[1],'вариант', 'варианта', 'вариантов')}</h3>
             </div>
           </div>
           <div className="featuredItem">
@@ -43,7 +57,7 @@ const Featured = () => {
             />
             <div className="featuredTitles">
               <h2>Пинск</h2>
-              <h3>{data[2]} вариантов</h3>
+              <h3>{data[2]} {getNoun(data[2],'вариант', 'варианта', 'вариантов')}</h3>
             </div>
           </div>
         </>
