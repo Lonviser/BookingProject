@@ -54,6 +54,21 @@ const Header = ({ type }) => {
     navigate("/hotels", { state: { destination, dates, options } });
   };
 
+  function getNoun(number, one, two, five) {
+    let n = Math.abs(number);
+    n %= 100;
+    if (n >= 5 && n <= 20) {
+      return five;
+    }
+    n %= 10;
+    if (n === 1) {
+      return one;
+    }
+    if (n >= 2 && n <= 4) {
+      return two;
+    }
+    return five;
+  }
 
   return (
     <div className="header">
@@ -111,7 +126,7 @@ const Header = ({ type }) => {
                 {openOptions && (
                   <div className="options">
                     <div className="optionItem">
-                      <span className="optionText">Взрослых</span>
+                      <span className="optionText">{getNoun(options.children,"Взрослый", "Взрослых","Взрослых")}</span>
                       <div className="optionCounter">
                         <button
                           disabled={options.adult <= 1}
@@ -132,7 +147,7 @@ const Header = ({ type }) => {
                       </div>
                     </div>
                     <div className="optionItem">
-                      <span className="optionText">Детей</span>
+                      <span className="optionText">{getNoun(options.children,"Ребёнок", "Ребёнка","Детей")}</span>
                       <div className="optionCounter">
                         <button
                           disabled={options.children <= 0}
@@ -153,7 +168,7 @@ const Header = ({ type }) => {
                       </div>
                     </div>
                     <div className="optionItem">
-                      <span className="optionText">Комнат</span>
+                    <span className="optionText">{getNoun(options.children,"Номер", "Номера","Номеров")}</span>
                       <div className="optionCounter">
                         <button
                           disabled={options.room <= 1}

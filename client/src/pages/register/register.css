@@ -1,0 +1,45 @@
+.register {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("https://blogtravel.by/wp-content/uploads/2020/06/dostoprimechatelnosti-grodno-6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .rContainers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .rContainers span{
+    background: white;
+    border-radius:20px;
+    padding: 10px;
+  }
+  
+  .rInput{
+    height: 30px;
+    padding: 10px;
+  }
+  
+  .rButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: #067164;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .rButton:disabled{
+    background-color: #0071c28c;
+    cursor: not-allowed;
+  }
+
+  button.regButton {
+    width: 100%;
+}

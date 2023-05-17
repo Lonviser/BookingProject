@@ -2,12 +2,9 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-// import { AuthContext } from "../../context/AuthContext";
-import "./login.css";
-import {Link} from "react-router-dom";
+import "./register.css";
 
-
-const Login = () => {
+const Register = () => {
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,
@@ -23,52 +20,62 @@ const Login = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    dispatch({ type: "LOGIN_START" });
+    dispatch({ type: "REGISTER_START" });
     try {
-      const res = await axios.post("/auth/login", credentials);
+      const res = await axios.post("/auth/register", credentials);
       if (res.data.isAdmin) {
-        dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-
+        dispatch({ type: "REGISTER_SUCCESS", payload: res.data.details });
         navigate("/");
       } else {
         dispatch({
-          type: "LOGIN_FAILURE",
+          type: "REGISTER_FAILURE",
           payload: { message: "Нет доступа!" },
         });
       }
     } catch (err) {
-      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+      dispatch({ type: "REGISTER_FAILURE", payload: err.response.data });
     }
   };
 
   return (
-    <div className="login">
-      <div className="lContainer">
+    <div className="register">
+      <div className="rContainers">
         <input
           type="text"
           placeholder="Логин"
           id="username"
           onChange={handleChange}
-          className="lInput"
+          className="rInput"
         />
         <input
           type="password"
           placeholder="Пароль"
           id="password"
           onChange={handleChange}
-          className="lInput"
+          className="rInput"
         />
-        <button disabled={loading} onClick={handleClick} className="lButton">
-          Войти
+        <input
+          type="text"
+          placeholder="Электронная почта"
+          id="mail"
+          onChange={handleChange}
+          className="rInput"
+        />
+        <input
+          type="phone"
+          placeholder="Телефонный номер"
+          id="phone"
+          onChange={handleChange}
+          className="rInput"
+        />
+
+        <button disabled={loading} onClick={handleClick} className="rButton">
+          Зарегистрироваться
         </button>
         {error && <span>{error.message}</span>}
-        <h3 className="login-not">Нет аккаунта?</h3>
-        <Link to="/register"> 
-          <button className="regButton">Зарегистрироваться</button>
-        </Link>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;

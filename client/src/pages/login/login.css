@@ -39,3 +39,23 @@
   background-color: #0071c28c;
   cursor: not-allowed;
 }
+
+h3.login-not {
+  text-align: center;
+  color: #067164;
+  background:white;
+  padding: 5px;
+  border-radius:5px;
+  font-size: 14px;
+}
+
+button.regButton {
+  border: none;
+  padding: 10px 20px;
+  background-color: #067164;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 auto;
+}
