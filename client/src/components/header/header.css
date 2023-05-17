@@ -126,3 +126,43 @@
 .optionCounterButton:disabled {
   cursor: not-allowed;
 }
+
+
+@media(max-width:1050px){
+  .headerSearch {
+    padding-top: 25px;
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    width: 92%;
+    gap: 10px;
+    bottom: -25px;
+    padding-left: 10px;
+}
+.header{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.headerSearchItem {
+  width: 100%;
+  padding-bottom: 2px;
+  border-bottom: 1px solid lightgray;
+}
+.headerSearchItem:last-child{
+  border:none;
+}
+button.headerBtn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.headerContainer{
+  margin-bottom: 175px;
+}
+h1.headerTitle {
+  text-align: center;
+}
+p.headerDesc {
+  text-align: center;
+}
+}

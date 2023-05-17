@@ -66,11 +66,11 @@ const Header = ({ type }) => {
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
-              Наше лучшее предложение
+              Бронируй гостиницы по всей Беларуси
             </h1>
             <p className="headerDesc">
-            Получайте вознаграждение за свои путешествия — разблокируйте мгновенную экономию в размере 10%
-            </p>
+            Удобное бронирование гостиниц – ваш путь к идеальному отдыху!
+             </p>
             {!user && <button className="headerBtn">Войти / зарегистрироваться</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
@@ -87,9 +87,9 @@ const Header = ({ type }) => {
                 <span
                   onClick={() => setOpenDate(!openDate)}
                   className="headerSearchText"
-                >{`${format(dates[0].startDate, "MM/dd/yyyy")} до ${format(
+                >{`${format(dates[0].startDate, "dd/MM/yyyy")} до ${format(
                   dates[0].endDate,
-                  "MM/dd/yyyy"
+                  "dd/MM/yyyy"
                 )}`}</span>
                 {openDate && (
                   <DateRange

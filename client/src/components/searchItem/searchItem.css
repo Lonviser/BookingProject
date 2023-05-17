@@ -107,3 +107,17 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
+@media(max-width:1050px){
+  .searchItem{
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  button.siCheckButton {
+    margin-top: 20px;
+    width: 100%;
+}
+.siImg{
+  width: 100%;
+}
+}

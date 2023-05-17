@@ -29,3 +29,9 @@
   font-size: 14px;
   font-weight: 300;
 }
+
+@media(max-width:1050px){
+  .pList {
+    flex-direction: column;
+}
+}

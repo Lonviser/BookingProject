@@ -149,3 +149,27 @@
   color: lightgray;
   cursor: pointer;
 }
+.bookNow{
+  display: none;
+}
+
+@media(max-width:1050px){
+  .hotelWrapper{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .hotelImages{
+    flex-direction: column;
+  }
+  .hotelDetails{
+    flex-direction: column;
+  }
+  .hotelImgWrapper{
+    width: 100%;
+  }
+  .hotelImg {
+    width: 98%;
+    object-fit: cover;
+    cursor: pointer;
+}
+}

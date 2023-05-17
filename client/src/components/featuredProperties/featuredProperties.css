@@ -44,3 +44,9 @@
 .fpRating>span{
   font-size: 14px;
 }
+
+@media(max-width:1050px){
+  .fp {
+    flex-direction: column;
+}
+}

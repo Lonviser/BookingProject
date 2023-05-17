@@ -136,10 +136,9 @@ const Hotel = () => {
               <h1>Идеально подходит для {days}-дневного пребывания!</h1>
               <span>
               Этот отель расположен в отличном месте.
-              Отличное расположение и оценка 9,8!
               </span>
               <h2>
-                <b>${days * data.cheapestPrice * options.room}</b> <br /> ({days} ночей)
+                <b>{days * data.cheapestPrice * options.room} рублей</b> <br /> ({days} ночей)
               </h2>
               <button onClick={handleClick}>Забронировать</button>
             </div>

@@ -29,3 +29,38 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media(max-width:1050px){
+  h1.mailTitle{
+    text-align: center;
+  }
+  span.mailDesc{
+    text-align: center;
+  }
+  .mailInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.mailInputContainer>button{
+  width: 100%;
+}
+.mailInputContainer>input{
+  text-align: center;
+}
+.mailInputContainer>input{
+  margin-right: 0;
+}
+.hotelWrapper{
+  width: auto !important;
+}
+}
+
+@media(max-width:400px){
+  .mail{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

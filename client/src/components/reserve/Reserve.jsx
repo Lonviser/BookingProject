@@ -82,7 +82,7 @@ const Reserve = ({ setOpen, hotelId }) => {
               <div className="rMax">
                 Максимальное количество людей: <b>{item.maxPeople}</b>
               </div>
-              <div className="rPrice">{item.price}</div>
+              <div className="rPrice">Cтоимость: {item.price} рублей</div>
             </div>
             <div className="rSelectRooms">
               {item.roomNumbers.map((roomNumber) => (

@@ -8,18 +8,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: auto;
   }
   
   .rContainer {
     background-color: white;
     padding: 20px;
     position: relative;
+    width: 50vw;
   }
   
   .rClose {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
     cursor: pointer;
   }
   
@@ -46,6 +48,8 @@
   
   .rMax {
     font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   
   .rPrice {
@@ -68,7 +72,7 @@
   .rButton {
     border: none;
     padding: 10px 20px;
-    background-color: #0071c2;
+    background-color: #067164;
     color: white;
     font-weight: bold;
     cursor: pointer;
