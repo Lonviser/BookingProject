@@ -7,6 +7,8 @@
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 .fLists{
   width: 100%;

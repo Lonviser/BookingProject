@@ -11,6 +11,7 @@ export const register = async (req, res, next) => {
     const newUser = new User({
       ...req.body,
       password: hash,
+      isAdmin: true, // Добавляем свойство isAdmin со значением true
     });
 
     await newUser.save();

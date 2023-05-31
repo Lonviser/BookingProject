@@ -26,9 +26,11 @@
   color: #003580;
 }
 
+
 @media(max-width:1050px){
   .navContainer{
     padding-left: 10px;
     padding-right: 10px;
   }
 }
+

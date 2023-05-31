@@ -45,6 +45,11 @@
   font-size: 14px;
 }
 
+span.fpPrice {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media(max-width:1050px){
   .fp {
     flex-direction: column;

@@ -1,17 +1,18 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
 import "./register.css";
+import {Link} from "react-router-dom";
 
 const Register = () => {
   const [credentials, setCredentials] = useState({
-    username: undefined,
-    password: undefined,
+    username: "",
+    password: "",
+    email: "", // Добавлено поле email
+    phone: "",
   });
 
-  const { loading, error, dispatch } = useContext(AuthContext);
-
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -20,20 +21,17 @@ const Register = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    dispatch({ type: "REGISTER_START" });
+    setError(null);
+
     try {
       const res = await axios.post("/auth/register", credentials);
       if (res.data.isAdmin) {
-        dispatch({ type: "REGISTER_SUCCESS", payload: res.data.details });
         navigate("/");
       } else {
-        dispatch({
-          type: "REGISTER_FAILURE",
-          payload: { message: "Нет доступа!" },
-        });
+        setError("Пользователь зарегистрирован!");
       }
     } catch (err) {
-      dispatch({ type: "REGISTER_FAILURE", payload: err.response.data });
+      setError(err.response.data.message);
     }
   };
 
@@ -44,6 +42,7 @@ const Register = () => {
           type="text"
           placeholder="Логин"
           id="username"
+          value={credentials.username}
           onChange={handleChange}
           className="rInput"
         />
@@ -51,30 +50,40 @@ const Register = () => {
           type="password"
           placeholder="Пароль"
           id="password"
+          value={credentials.password}
           onChange={handleChange}
           className="rInput"
         />
         <input
-          type="text"
+          type="email" // Используется тип email для ввода email
           placeholder="Электронная почта"
-          id="mail"
-          onChange={handleChange}
+          id="email" // Используется id "email"
+          value={credentials.email} // Используется значение из состояния
+          onChange={handleChange} // Используется обработчик изменения
           className="rInput"
         />
         <input
           type="phone"
           placeholder="Телефонный номер"
           id="phone"
+          value={credentials.phone}
           onChange={handleChange}
           className="rInput"
         />
 
-        <button disabled={loading} onClick={handleClick} className="rButton">
+        <button onClick={handleClick} className="rButton">
           Зарегистрироваться
         </button>
-        {error && <span>{error.message}</span>}
+        <h3 className="login-not">Есть аккаунт?</h3>
+        <Link to="/login"> 
+          <button className="regButton">Авторизоваться</button>
+        </Link>
+        {error && <span>{error}</span>}
+        
       </div>
+      
     </div>
+    
   );
 };
 
