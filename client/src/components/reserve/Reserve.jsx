@@ -63,8 +63,12 @@ const Reserve = ({ setOpen, hotelId }) => {
       );
       setOpen(false);
       navigate("/");
+      setShowSuccessMessage(true);
     } catch (err) {}
   };
+
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   return (
     <div className="reserve">
       <div className="rContainer">
@@ -86,7 +90,7 @@ const Reserve = ({ setOpen, hotelId }) => {
             </div>
             <div className="rSelectRooms">
               {item.roomNumbers.map((roomNumber) => (
-                <div className="room">
+                <div className="room" key={roomNumber._id}>
                   <label>{roomNumber.number}</label>
                   <input
                     type="checkbox"
@@ -103,6 +107,12 @@ const Reserve = ({ setOpen, hotelId }) => {
           Забронируй сейчас!
         </button>
       </div>
+      {showSuccessMessage && (
+        <div className="successMessage">
+          <p>Бронирование успешно завершено!</p>
+          <button onClick={() => setShowSuccessMessage(false)}>Закрыть</button>
+        </div>
+      )}
     </div>
   );
 };
